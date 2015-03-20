@@ -10,6 +10,8 @@ from python_qt_binding.QtCore import Qt, QTimer, Slot
 from python_qt_binding.QtGui import QKeySequence, QShortcut, QWidget
 from rqt_gui_py.plugin import Plugin
 
+from pi_dc_motor.msg import Motor
+
 
 class CarControlWidget(QWidget):
     def __init__(self, parent):
@@ -20,43 +22,43 @@ class CarControlWidget(QWidget):
     def keyPressEvent(self, event):
         key = event.key()
         if key == Qt.Key_Left:
-            print('Left Arrow Pressed')
+            rospy.logdebug('Left Arrow Pressed')
         elif key == Qt.Key_Right:
-            print('Right Arrow Pressed')
+            rospy.logdebug('Right Arrow Pressed')
         elif key == Qt.Key_Up:
-            print('Up Arrow Pressed')
+            rospy.logdebug('Up Arrow Pressed')
         elif key == Qt.Key_Down:
-            print('Down Arrow Pressed')
+            rospy.logdebug('Down Arrow Pressed')
 
     def keyReleaseEvent(self, event):
         key = event.key()
         if key == Qt.Key_Left:
-            print('Left Arrow Released')
+            rospy.logdebug('Left Arrow Released')
         elif key == Qt.Key_Right:
-            print('Right Arrow Released')
+            rospy.logdebug('Right Arrow Released')
         elif key == Qt.Key_Up:
-            print('Up Arrow Released')
+            rospy.logdebug('Up Arrow Released')
         elif key == Qt.Key_Down:
-            print('Down Arrow Released')
+            rospy.logdebug('Down Arrow Released')
 
     def mouseMoveEvent(self, event):
         pos = event.pos()
 
-        print "x: %d - y: %d" % (event.x(), event.y())
+        rospy.logdebug("x: %d - y: %d" % (event.x(), event.y()))
 
     def initUi(self):
-        self.setFixedHeight(200)
-        self.setFixedWidth(200)
+        self.setFixedHeight(600)
+        self.setFixedWidth(600)
         # self.setMouseTracking(True)
         self.grabKeyboard()
+        rospy.loginfo("CarControl: keyboard grabed. Start control your car.")
 
     def shutdown(self):
         self.releaseKeyboard()
+        rospy.loginfo("CarControl: shutdown")
 
 
 class CarControl(Plugin):
-
-
     def __init__(self, context):
         super(CarControl, self).__init__(context)
         self.setObjectName('CarControl')
