@@ -1,5 +1,5 @@
 <library path="src">
-  <class name="CarControl" type="car_control.car_control_plugin.CarControlPlugin"
+  <class name="CarControl" type="car_control.car_control.CarControl"
          base_class_type="rqt_gui_py::Plugin">
     <description>
       GUI to support monitoring during Moveit! runtime.
@@ -10,7 +10,7 @@
         <icon type="theme">folder</icon>
         <statustip>Plugins related to robot tools.</statustip>
       </group>
-      <label>Moveit! Monitor (experimental)</label>
+      <label>Car Control</label>
       <icon type="theme">accessories-text-editor</icon>
       <statustip>GUI to support monitoring during Moveit! runtime.</statustip>
     </qtgui>

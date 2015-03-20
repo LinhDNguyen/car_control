@@ -5,4 +5,5 @@ import sys
 from rqt_gui.main import Main
 
 main = Main()
-sys.exit(main.main(sys.argv, standalone='car_control.car_control_plugin.CarControlPlugin'))
+
+sys.exit(main.main(sys.argv, standalone='car_control.car_control.CarControl'))
