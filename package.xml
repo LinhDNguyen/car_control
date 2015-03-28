@@ -43,6 +43,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>pi_dc_control</build_depend>
+  <build_depend>pi_distance_scanner</build_depend>
   <run_depend>rosnode</run_depend>
   <run_depend>rospy</run_depend>
   <run_depend>rostopic</run_depend>
@@ -53,6 +54,7 @@
   <run_depend>sensor_msgs</run_depend>
   <run_depend>std_msgs</run_depend>
   <run_depend>pi_dc_control</run_depend>
+  <run_depend>pi_distance_scanner</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
